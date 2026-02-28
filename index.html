@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJ LASH LK by DJ LAHIRU</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#d4af37',   /* Metallic Gold */
+                        secondary: '#ffd700', /* Bright Yellow Gold */
+                        dark: '#0a0a0a',      /* Almost Black */
+                        darker: '#000000',    /* Pure Black */
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Oswald', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@500;700&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        .golden-glow {
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .golden-text {
+            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .masonry {
+            column-count: 2;
+            column-gap: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .masonry {
+                column-count: 3;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .masonry {
+                column-count: 4;
+            }
+        }
+
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+        }
+
+        .feedback-grid {
+            column-count: 2;
+            gap: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .feedback-grid {
+                column-count: 3;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .feedback-grid {
+                column-count: 4;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .feedback-grid {
+                column-count: 5;
+            }
+        }
+
+        .feedback-item {
+            break-inside: avoid;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body class="bg-dark text-white font-sans antialiased no-scrollbar">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-transparent py-4" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#home" class="flex flex-col items-center">
+                        <span
+                            class="text-3xl font-display font-bold uppercase tracking-widest golden-text leading-tight drop-shadow-md">DJ
+                            LASH LK</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#about"
+                            class="text-gray-300 hover:text-primary transition font-medium text-sm tracking-wide uppercase">About</a>
+                        <a href="#services"
+                            class="text-gray-300 hover:text-primary transition font-medium text-sm tracking-wide uppercase">Services</a>
+                        <a href="#gallery"
+                            class="text-gray-300 hover:text-primary transition font-medium text-sm tracking-wide uppercase">Gallery</a>
+                        <a href="#feedback"
+                            class="text-gray-300 hover:text-primary transition font-medium text-sm tracking-wide uppercase">Feedback</a>
+                        <a href="#interviews"
+                            class="text-gray-300 hover:text-primary transition font-medium text-sm tracking-wide uppercase">Interviews</a>
+                        <a href="#contact"
+                            class="bg-gradient-to-r from-[#bf953f] via-[#fcf6ba] to-[#aa771c] text-black px-6 py-2 rounded-full text-sm font-bold shadow-lg shadow-primary/20 hover:shadow-primary/50 transition transform hover:-translate-y-1 uppercase tracking-wide">Book
+                            Now</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-primary hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-darker/95 backdrop-blur-xl border-b border-gray-800 absolute w-full mt-4">
+            <div class="px-4 pt-2 pb-6 space-y-2 text-center">
+                <a href="#about"
+                    class="text-gray-300 hover:text-primary block px-3 py-3 text-lg font-medium border-b border-gray-800">About</a>
+                <a href="#services"
+                    class="text-gray-300 hover:text-primary block px-3 py-3 text-lg font-medium border-b border-gray-800">Services</a>
+                <a href="#gallery"
+                    class="text-gray-300 hover:text-primary block px-3 py-3 text-lg font-medium border-b border-gray-800">Gallery</a>
+                <a href="#feedback"
+                    class="text-gray-300 hover:text-primary block px-3 py-3 text-lg font-medium border-b border-gray-800">Feedback</a>
+                <a href="#interviews"
+                    class="text-gray-300 hover:text-primary block px-3 py-3 text-lg font-medium border-b border-gray-800">Interviews</a>
+                <a href="#contact"
+                    class="bg-gradient-to-r from-[#bf953f] via-[#fcf6ba] to-[#aa771c] text-black block px-3 py-3 rounded-md text-lg font-bold mt-4 mx-4">Book
+                    Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden py-24">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="assets/images/Web cvr.jpg" alt="DJ Background"
+                class="w-full h-full object-cover object-center transform scale-105 animate-[kenburns_20s_ease-in-out_infinite_alternate]">
+            <div class="absolute inset-0 bg-gradient-to-b from-darker/90 via-darker/60 to-dark"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto animate-fade-in-up">
+            <div class="mb-6 flex justify-center">
+                <img src="assets/images/logo2.png" alt="DJ LASH Logo"
+                    class="mx-auto w-64 md:w-80 h-auto object-contain drop-shadow-[0_0_30px_rgba(212,175,55,0.4)]">
+            </div>
+
+            <h2 class="text-primary font-bold tracking-[0.3em] uppercase mb-4 text-sm md:text-base">The Ultimate
+                Experience</h2>
+            <h1
+                class="text-6xl md:text-8xl lg:text-[7rem] font-display font-black mb-2 uppercase tracking-tight golden-text golden-glow">
+                DJ LASH LK
+            </h1>
+            <p class="text-xl md:text-3xl font-light tracking-widest text-gray-300 mb-8">by DJ LAHIRU</p>
+
+            <div class="flex justify-center gap-5 mt-8 mb-4">
+                <a href="#"
+                    class="w-12 h-12 rounded-full border border-gray-600 bg-darker/50 flex items-center justify-center text-lg text-gray-300 hover:bg-[#1877F2] hover:text-white hover:border-transparent transition-all"><i
+                        class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"
+                    class="w-12 h-12 rounded-full border border-gray-600 bg-darker/50 flex items-center justify-center text-lg text-gray-300 hover:bg-gradient-to-br hover:from-[#f09433] hover:via-[#e6683c] hover:to-[#bc1888] hover:text-white hover:border-transparent transition-all"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a href="#"
+                    class="w-12 h-12 rounded-full border border-gray-600 bg-darker/50 flex items-center justify-center text-lg text-gray-300 hover:bg-[#FF0000] hover:text-white hover:border-transparent transition-all"><i
+                        class="fa-brands fa-youtube"></i></a>
+                <a href="#"
+                    class="w-12 h-12 rounded-full border border-gray-600 bg-darker/50 flex items-center justify-center text-lg text-gray-300 hover:bg-black hover:text-white hover:border-transparent transition-all"><i
+                        class="fa-brands fa-tiktok"></i></a>
+            </div>
+
+
+        </div>
+
+        <!-- Scroll Down indicator -->
+        <a href="#about"
+            class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-primary animate-bounce z-10">
+            <i class="fa-solid fa-chevron-down text-3xl"></i>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-dark relative border-b border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+                <!-- Image Slider -->
+                <div
+                    class="relative w-full h-[500px] rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(212,175,55,0.15)] border border-primary/20 group">
+                    <div id="about-slider" class="w-full h-full">
+                        <img src="assets/images/IMG_3380.jpg"
+                            class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100"
+                            data-slide="0">
+                        <img src="assets/images/IMG_0132.jpg"
+                            class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+                            data-slide="1">
+                        <img src="assets/images/IMG_1052.jpg"
+                            class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+                            data-slide="2">
+                        <img src="assets/images/IMG_3808.jpg"
+                            class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+                            data-slide="3">
+                        <img src="assets/images/IMG_7214.jpg"
+                            class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+                            data-slide="4">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-darker via-transparent to-transparent"></div>
+                    <div
+                        class="absolute bottom-6 right-6 bg-darker/80 backdrop-blur border border-primary/30 p-4 rounded-xl shadow-2xl text-center min-w-[120px]">
+                        <p class="text-4xl font-black text-primary mb-1">10+</p>
+                        <p class="text-gray-400 font-medium text-sm">Years Exp.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-primary font-bold tracking-widest uppercase mb-2">About Us</h3>
+                    <h2 class="text-4xl md:text-5xl font-display font-bold mb-6 uppercase tracking-wide">Bringing Magic
+                        to the <span class="golden-text">Dance Floor</span></h2>
+
+                    <p class="text-gray-400 text-lg mb-6 leading-relaxed">
+                        Welcome to DJ LASH LK by DJ LAHIRU. We are Sri Lanka's premium DJ service operating with
+                        state-of-the-art equipment and a massive catalog of music ensuring your event goes exactly the
+                        way you planned.
+                    </p>
+                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                        With over a decade of experience, we specialize in reading the crowd. From elegant wedding
+                        receptions to high-energy corporate galas and crazy birthday bashes, we create the perfect
+                        atmosphere with seamless transitions and phenomenal stage setups.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-6 mb-8 pt-6 border-t border-gray-800">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 rounded-full border border-primary/50 flex items-center justify-center text-primary text-xl">
+                                <i class="fa-solid fa-music"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-white">Massive Library</h4>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 rounded-full border border-primary/50 flex items-center justify-center text-primary text-xl">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-white">Premium Gear</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-darker relative border-b border-gray-900">
+        <!-- Background accents -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[100px] -z-10"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-primary font-bold tracking-widest uppercase mb-2">Capabilities</h3>
+                <h2 class="text-4xl md:text-5xl font-display font-bold uppercase tracking-wide">Our <span
+                        class="golden-text">Services</span></h2>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-6">
+
+                <!-- Service 1 -->
+                <div
+                    class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(20%-19.2px)] group flex flex-col items-center justify-start">
+                    <div
+                        class="w-full relative rounded-xl overflow-hidden shadow-lg border border-gray-800 hover:border-primary/50 transition duration-300 aspect-square group-hover:shadow-[0_0_20px_rgba(212,175,55,0.2)]">
+                        <img src="assets/images/IMG_5215sxxs.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    </div>
+                    <div class="mt-4 flex flex-col items-center text-center">
+                        <div
+                            class="w-12 h-12 bg-darker/80 border border-primary/30 rounded-full flex items-center justify-center text-primary text-xl mb-3 shadow-[0_0_10px_rgba(212,175,55,0.2)]">
+                            <i class="fa-solid fa-ring"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white tracking-wide uppercase">Wedding DJ</h3>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div
+                    class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(20%-19.2px)] group flex flex-col items-center justify-start">
+                    <div
+                        class="w-full relative rounded-xl overflow-hidden shadow-lg border border-gray-800 hover:border-primary/50 transition duration-300 aspect-square group-hover:shadow-[0_0_20px_rgba(212,175,55,0.2)]">
+                        <img src="assets/images/IMG_4075.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    </div>
+                    <div class="mt-4 flex flex-col items-center text-center">
+                        <div
+                            class="w-12 h-12 bg-darker/80 border border-primary/30 rounded-full flex items-center justify-center text-primary text-xl mb-3 shadow-[0_0_10px_rgba(212,175,55,0.2)]">
+                            <i class="fa-solid fa-cake-candles"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white tracking-wide uppercase">Birthday Parties</h3>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div
+                    class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(20%-19.2px)] group flex flex-col items-center justify-start">
+                    <div
+                        class="w-full relative rounded-xl overflow-hidden shadow-lg border border-gray-800 hover:border-primary/50 transition duration-300 aspect-square group-hover:shadow-[0_0_20px_rgba(212,175,55,0.2)]">
+                        <img src="assets/images/IMG_3845.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    </div>
+                    <div class="mt-4 flex flex-col items-center text-center">
+                        <div
+                            class="w-12 h-12 bg-darker/80 border border-primary/30 rounded-full flex items-center justify-center text-primary text-xl mb-3 shadow-[0_0_10px_rgba(212,175,55,0.2)]">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white tracking-wide uppercase">Corporate Events</h3>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div
+                    class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(20%-19.2px)] group flex flex-col items-center justify-start">
+                    <div
+                        class="w-full relative rounded-xl overflow-hidden shadow-lg border border-gray-800 hover:border-primary/50 transition duration-300 aspect-square group-hover:shadow-[0_0_20px_rgba(212,175,55,0.2)]">
+                        <img src="assets/images/IMG_E8461.JPG"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    </div>
+                    <div class="mt-4 flex flex-col items-center text-center">
+                        <div
+                            class="w-12 h-12 bg-darker/80 border border-primary/30 rounded-full flex items-center justify-center text-primary text-xl mb-3 shadow-[0_0_10px_rgba(212,175,55,0.2)]">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white tracking-wide uppercase">Get Togethers</h3>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div
+                    class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(20%-19.2px)] group flex flex-col items-center justify-start">
+                    <div
+                        class="w-full relative rounded-xl overflow-hidden shadow-lg border border-gray-800 hover:border-primary/50 transition duration-300 aspect-square group-hover:shadow-[0_0_20px_rgba(212,175,55,0.2)]">
+                        <img src="assets/images/IMG 10.40.09.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    </div>
+                    <div class="mt-4 flex flex-col items-center text-center">
+                        <div
+                            class="w-12 h-12 bg-darker/80 border border-primary/30 rounded-full flex items-center justify-center text-primary text-xl mb-3 shadow-[0_0_10px_rgba(212,175,55,0.2)]">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white tracking-wide uppercase">Stage Lighting</h3>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24 bg-dark relative border-b border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-primary font-bold tracking-widest uppercase mb-2">Our Work</h3>
+                <h2 class="text-4xl md:text-5xl font-display font-bold uppercase tracking-wide">Event <span
+                        class="golden-text">Gallery</span></h2>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <script>
+                    const galleryImages = [
+                        'IMG_2595.jpg',
+                        'IMG_7024.jpg',
+                        'IMG_8703.jpg',
+                        'THA_6751.jpg',
+                        'IMG_1984.jpg',
+                        'IMG_2936.JPG',
+                        'IMG_5978.JPG',
+                        'IMG_8698.jpg',
+                        'IMG_8665.jpg',
+                        'IMG_9331.jpg',
+                        'IMG_E3577.JPG',
+                        'THA_7171.jpg',
+                        'IMG_1054.jpg',
+                        'IMG_8213.jpg',
+                        'IMG_8647.jpg',
+                        'IMG_8700.jpg'
+                    ];
+
+                    galleryImages.forEach((img, index) => {
+                        document.write(`
+                            <div class="aspect-square rounded-xl overflow-hidden shadow-xl hover:shadow-[0_0_20px_rgba(212,175,55,0.3)] transition border border-gray-800 group cursor-pointer" onclick="openLightbox(${index})">
+                                <img src="assets/images/${img}" alt="Gallery Image" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            </div>
+                        `);
+                    });
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox"
+        class="fixed inset-0 z-[100] bg-black/95 hidden flex items-center justify-center backdrop-blur-sm opacity-0 transition-opacity duration-300">
+        <!-- Close Button -->
+        <button onclick="closeLightbox()"
+            class="absolute top-6 right-6 text-white hover:text-primary text-4xl focus:outline-none z-10 transition transform hover:scale-110">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <!-- Previous Button -->
+        <button onclick="prevImage(event)"
+            class="absolute left-4 md:left-10 text-white hover:text-primary text-5xl focus:outline-none z-10 transition transform hover:-translate-x-2">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <!-- Main Image content -->
+        <div class="w-full max-w-5xl px-12 md:px-24 flex justify-center items-center h-full max-h-[90vh]">
+            <img id="lightbox-img" src="" alt="Enlarged Gallery Image"
+                class="max-w-full max-h-full object-contain rounded-xl shadow-[0_0_50px_rgba(212,175,55,0.2)]">
+        </div>
+
+        <!-- Next Button -->
+        <button onclick="nextImage(event)"
+            class="absolute right-4 md:right-10 text-white hover:text-primary text-5xl focus:outline-none z-10 transition transform hover:translate-x-2">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <!-- Feedback Section (Slider styled) -->
+    <section id="feedback" class="py-24 bg-darker relative border-b border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-primary font-bold tracking-widest uppercase mb-2">Testimonials</h3>
+                <h2 class="text-4xl md:text-5xl font-display font-bold uppercase tracking-wide">Client <span
+                        class="golden-text">Feedback</span></h2>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Real experiences from our previous clients. See what
+                    they have to say about the <br> DJ LASH experience.</p>
+            </div>
+
+            <!-- Swiper Slider Container -->
+            <div class="swiper feedbackSwiper pb-12 px-2 md:px-10">
+                <div class="swiper-wrapper">
+                    <script>
+                        for (let i = 1; i <= 10; i++) {
+                            document.write(`
+                                <div class="swiper-slide">
+                                    <div class="feedback-item bg-dark border border-gray-800 rounded-xl overflow-hidden hover:border-primary/50 transition duration-300 flex items-center justify-center p-2 h-[250px] shadow-[0_0_15px_rgba(0,0,0,0.5)]">
+                                        <img src="assets/images/feedback_${i}.jpg" class="w-full h-full object-cover rounded-lg opacity-80 hover:opacity-100 transition" alt="Client Feedback ${i}">
+                                    </div>
+                                </div>
+                            `);
+                        }
+                    </script>
+                </div>
+
+                <!-- Swiper Navigation Arrows -->
+                <div class="swiper-button-next text-primary drop-shadow-md"></div>
+                <div class="swiper-button-prev text-primary drop-shadow-md"></div>
+
+                <!-- Swiper Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interviews Section -->
+    <section id="interviews" class="py-24 bg-dark relative border-b border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-[#FF0000] font-bold tracking-widest uppercase mb-2"><i
+                        class="fa-brands fa-youtube mr-1"></i> Featured</h3>
+                <h2 class="text-4xl md:text-5xl font-display font-bold uppercase tracking-wide">Watch <span
+                        class="text-white">Interviews</span></h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Video 1 -->
+                <div
+                    class="bg-darker rounded-2xl overflow-hidden border border-gray-800 shadow-2xl hover:border-primary/30 transition-colors duration-500">
+                    <div class="relative w-full pb-[56.25%] bg-black">
+                        <iframe class="absolute top-0 left-0 w-full h-full border-0"
+                            src="https://youtu.be/Qa1TOXxc3xI?si=NHIqLAQj5G4MJMJq"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div
+                    class="bg-darker rounded-2xl overflow-hidden border border-gray-800 shadow-2xl hover:border-primary/30 transition-colors duration-500">
+                    <div class="relative w-full pb-[56.25%] bg-black">
+                        <iframe class="absolute top-0 left-0 w-full h-full border-0"
+                            src="https://youtu.be/Fqa8dCipoT4?si=omVqWdn1Ray0XvJs"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Details & Footer inside Contact Section -->
+    <section id="contact" class="pt-24 bg-darker relative flex flex-col justify-between">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mb-16">
+            <div class="text-center mb-16">
+               <!-- <img src="assets/images/logo2.png" alt="DJ LASH LK Logo"
+                    class="mx-auto w-64 md:w-80 h-auto object-contain mb-8 drop-shadow-[0_0_30px_rgba(212,175,55,0.3)]"> -->
+                <h3 class="text-primary font-bold tracking-widest uppercase mb-2">Bookings Open</h3>
+                <h2 class="text-4xl md:text-5xl font-display font-bold uppercase tracking-wide">Let's <span
+                        class="golden-text">Connect</span></h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+                <!-- Info Cards -->
+                <div class="space-y-6">
+                    <div
+                        class="bg-dark border border-gray-800 p-8 rounded-2xl flex items-center gap-6 hover:border-primary/40 transition">
+                        <div
+                            class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary text-2xl shrink-0">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-gray-400 text-sm font-bold uppercase tracking-wider mb-1">Direct
+                                Call/WhatsApp</h4>
+                            <a href="https://wa.me/+94713629845"
+                                class="text-2xl font-bold text-white hover:text-primary transition">+94 71 362 9845</a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-dark border border-gray-800 p-8 rounded-2xl flex items-center gap-6 hover:border-primary/40 transition">
+                        <div
+                            class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary text-2xl shrink-0">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-gray-400 text-sm font-bold uppercase tracking-wider mb-1">Email inquiries
+                            </h4>
+                            <a href="mailto:imdjlashlk@gmail.com"
+                                class="text-xl font-bold text-white hover:text-primary transition break-all">bookings@djlash.lk</a>
+                        </div>
+                    </div>
+
+                    <!-- Socials Block -->
+                    <div class="bg-dark border border-gray-800 p-8 rounded-2xl shadow-xl">
+                        <h4 class="text-gray-400 text-sm font-bold uppercase tracking-wider mb-6 text-center">Follow the
+                            Action</h4>
+                        <div class="flex justify-center gap-4 flex-wrap">
+                            <a href="https://web.facebook.com/DjLahiruB"
+                                class="w-14 h-14 rounded-full bg-darker border border-gray-700 flex items-center justify-center text-xl text-gray-300 hover:bg-[#1877F2] hover:text-white hover:border-transparent transition-all shadow-lg hover:-translate-y-1"><i
+                                    class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/djlahirusl/"
+                                class="w-14 h-14 rounded-full bg-darker border border-gray-700 flex items-center justify-center text-xl text-gray-300 hover:bg-gradient-to-br hover:from-[#f09433] hover:via-[#e6683c] hover:to-[#bc1888] hover:text-white hover:border-transparent transition-all shadow-lg hover:-translate-y-1"><i
+                                    class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.tiktok.com/@djlahirub"
+                                class="w-14 h-14 rounded-full bg-darker border border-gray-700 flex items-center justify-center text-xl text-gray-300 hover:bg-black hover:text-white hover:border-transparent transition-all shadow-lg hover:-translate-y-1"><i
+                                    class="fa-brands fa-tiktok"></i></a>
+                            <a href="https://www.youtube.com/@djlashlk"
+                                class="w-14 h-14 rounded-full bg-darker border border-gray-700 flex items-center justify-center text-xl text-gray-300 hover:bg-[#FF0000] hover:text-white hover:border-transparent transition-all shadow-lg hover:-translate-y-1"><i
+                                    class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Embed -->
+                <div class="bg-dark rounded-2xl overflow-hidden border border-gray-800 h-full min-h-[400px]">
+                    <iframe
+                        src="https://maps.app.goo.gl/h8ZMrCNJxaqtPSEL8"
+                        class="w-full h-full min-h-[400px]"
+                        style="border:0; <!--filter: invert(0%) hue-rotate(180deg) grayscale(0%);" allowfullscreen=""
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"-->">
+                    </iframe>
+                </div>
+
+            </div>
+        </div>
+
+        <footer class="bg-black py-8 border-t border-gray-900 w-full mt-auto">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <div class="flex items-center justify-center gap-2 mb-4">
+                    <span class="text-xl font-display font-bold text-white uppercase tracking-wider">DJ LASH LK</span>
+                </div>
+                <p class="text-gray-500 text-sm">&copy; 2024 DJ LASH LK by DJ LAHIRU. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </section>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/+94713629845" target="_blank"
+        class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center text-3xl shadow-[0_0_20px_rgba(37,211,102,0.5)] hover:scale-110 transition-transform duration-300 z-50">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Scripts -->
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
